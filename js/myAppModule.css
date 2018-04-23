@@ -1,0 +1,50 @@
+/* FORMULARIOS */
+/* body {
+    font: normal 16px/1.4 Georgia;
+}
+input:not([type='checkbox']), select {
+    width: 250px;
+}
+select, input {
+    padding: 5px;
+    margin-top: 12px;
+    font-family: inherit;
+}
+input[type='submit'] {
+    width: 264px;
+}
+form span {
+    color: red;
+}
+input[name='email'].ng-dirty.ng-invalid {
+    color: red;
+}
+input[name='email'].ng-dirty.ng-valid {
+    color: green;
+} */
+
+/* Ejemplo mas detallado */
+body,input,select{
+    font:normal 16px/1.4 Georgia;
+}
+input:not([type='checkbox']),select{
+    width: 250px;
+}
+
+input , select {
+    padding: 5px;
+    margin-top: 12px;
+}
+
+input[name='email'].ng-dirty.ng-invalid-email{
+    color:red;
+}
+
+input[name='email'].ng-dirty.ng-valid-email{
+    color:green;
+}
+
+form span, .error{
+    color: red;
+}
+

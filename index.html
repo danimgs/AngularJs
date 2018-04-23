@@ -1,0 +1,801 @@
+<!-- PLANTILLA
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title> lista 2-4 </title>
+<script src="js/angular.min.js"></script>
+</head>
+<body>
+</body>
+</html> -->
+
+<!-- HELLO WORD
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>Listing 2-1</title>
+<script src="js/angular.min.js"></script>
+</head>
+<body>
+<p ng-app>Hello {{'Wor' + 'ld'}}</p>
+<p>Hello {{'Wor' + 'ld'}}</p>
+</body>
+</html> -->
+
+<!-- LISTAR UNA CIUDAD
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>Listing 2-3</title>
+<script src="js/angular.min.js"></script>
+</head>
+<body>
+<label>City: </label><input ng-model="city" type="text" /></label>
+<p>You entered: {{city}}</p>
+</body>
+</html> -->
+
+<!-- ng-show
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title> lista 2-4 </title>
+<script src="js/angular.min.js"></script>
+</head>
+<body>
+<p ng-show="true">Párrafo 1</p>
+<p ng-show="false">Párrafo 2</p>
+<p ng-show="1==1">Párrafo 3</p>
+<p ng-show="1==2">Párrafo 4</p>
+</body>
+</html> -->
+
+<!-- ng-click
+DOCTYPE html>
+<html ng-app>
+<head>
+	<title> lista 2-5 </title>
+<script src="js/angular.min.js"></script>
+</head>
+<body>
+	<button ng-click="count = count + 1" ng-init ="count = 0">
+	Increment
+	</button>
+	count: {{count}}
+</body>
+</html>-->
+
+<!-- EXPRESIONES DE MUESTRA -->
+<!-- <!DOCTYPE html>
+<html ng-app>
+<head>
+	<title> lista 2-6 </title>
+<script src="js/angular.min.js"></script>
+</head>
+<body>
+<h1>Expresiones de muestra</h1>
+Aritmetica basica 
+<p>6 + 4 = {{6 + 4}}</p>
+metodo de javascript 
+<p>{{"Beginning AngularJS".toUpperCase()}}</p>
+buscar un caracter
+<p>{{"ABCDEFG".indexOf('D')}}</p>
+operacion ternaria
+<p>{{1==1 ? "Red" : "Blue"}}</p>
+</body>
+</html> -->
+
+<!-- EJEMPLO MVC -->
+<!-- <!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js"></script>
+	<script>
+		//Nombre de la aplicacón
+		var myApp = angular.module('app', []);
+			//Se crea el controlador
+			myApp.controller('MyFirstCtrl', function($scope){
+				//Creación del array de empleados
+				$scope.employees = ['Catherine Grant', 'Monica Grant',
+				'Christopher Grant', 'Jennifer Grant'
+				];
+				//Creacion de una función
+				$scope.addEmployee = function(){
+
+				}
+			})
+	</script>
+		
+</head>
+<body ng-controller='MyFirstCtrl'>
+	<h2>Number of Employees: {{ employees.length }}</h2>
+</body>
+</html> -->
+
+
+<!-- NOMBRE Y NUMERO DE EMPLEADOS -->
+<!-- <!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js"></script>
+	<script>
+		//Nombre de la aplicación
+		var myApp = angular.module("app",[]);
+
+		myApp.controller('MyFirstCtrl',function($scope){
+			//Creación del array de empleados
+			$scope.employees = ['Catherine Grant', 'Monica Grant',
+			'Christopher Grant', 'Jennifer Grant'];
+
+		})
+
+	</script>
+</head>
+<body ng-controller='MyFirstCtrl'>
+	<h2>Number of Employees: {{ employees.length}}</h2>
+	<p ng-repeat="employee in employees">{{employee}}</p>
+</body>
+</html> -->
+
+<!-- DATOS DE EMPLEADOS -->
+<!-- <!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Listing 4-4</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js"></script>
+	<script>
+		/* Nombre de la app */
+		var myApp = angular.module("app",[]);
+
+		myApp.controller('MyFilterDemoCtrl',function($scope){
+			$scope.someData = {
+				firstName: 'JENNA',
+				surname: 'GRANT',
+				dateJoined: new Date(2010, 2, 23),
+				consumption: 123.659855,
+				plan: 'super-basic-plan'
+			};
+		})
+		
+	</script>
+</head>
+<body ng-controller="MyFilterDemoCtrl">
+	<div class="alert alert-info">
+		Name: {{ someData.firstName }}<br/>
+		Consumption: {{ someData.consumption }}<br/>
+		Consumption: {{someData.consumption | number }}
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html> -->
+
+<!-- FILTRO DE DATOS DE FECHA -->
+<!-- <!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Listing 4-5</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js"></script>
+	<script>
+		var myApp = angular.module("app",[]);
+		myApp.controller("MyFilterDemoCtrl",function($scope){
+			$scope.someData = {
+				firstName: 'JENNA',
+				surname: 'GRANT',
+				dateJoined: new Date(2018, 3, 12),
+				consumption: 123.659855,
+				plan: 'super-basic-plan'
+			};
+			
+		})
+
+	</script>
+</head>
+<body ng-app ng-controller="MyFilterDemoCtrl">
+	<div>medium:<strong> {{ someData.dateJoined | date:'medium'}} </strong></div>
+	<div>mediumDate:<strong> {{ someData.dateJoined | date:'mediumDate'}} </strong></div>
+	<div>shortDate:<strong> {{ someData.dateJoined | date:'shortDate'}} </strong></div>
+	<div>This customer joined in the month of {{ someData.dateJoined | date:'MMMM'}} on a {{
+			someData.dateJoined | date:'EEEE'}} at {{ someData.dateJoined | date:'ha'}}</div>
+</body>
+</html> -->
+
+<!-- Uso del Modulo creado -->
+<!-- <!DOCTYPE html >
+<html ng-app="myAppModule">
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Listing 4-10</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js"></script>
+	<script src="js/myAppModule.js"></script>
+	<script>
+		function stripDashes(txt) {
+			return txt.split('-').join(' ');
+		};
+		console.log(stripDashes("super-basic-plan"));
+		console.log(stripDashes("something-with-a-lot-more-dashes-plan"));
+		console.log(stripDashes("noDashesPlan"));
+	</script>
+</head>
+
+<body ng-app="myAppModule" ng-controller="MyFilterDemoCtrl">
+	<p>Plan type: {{data.plan}}</p>
+	<p>Plan type: {{data.plan | stripDashes}}</p>
+	<script>
+		/* Minusculas */
+		/* function toTitleCase(str) {
+			return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
+		}
+		console.log(toTitleCase("jennifer"));
+		console.log(toTitleCase("jENniFEr"));
+		console.log(toTitleCase("jENniFEr amanda Grant")); */
+		/* Mayusculas */
+		/* function toTitleCase(str) {
+			return str.replace(/\w\S*//*g, function (txt) {
+				return txt.charAt(0).toUpperCase() + txt.
+					substr(1).toLowerCase();
+			});
+		}
+		console.log(toTitleCase("jennifer"));
+		console.log(toTitleCase("jENniFEr"));
+		console.log(toTitleCase("jENniFEr amanda Grant")); */
+	</script>
+</body>
+
+</html> -->
+
+
+<!-- USANDO DIRECTIVAS -->
+<!-- Modulo de colores: -->
+<!-- <!DOCTYPE html >
+<html ng-app="myAppModule">
+
+<head>
+	<title></title>
+	<script src="js/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js"></script>
+	<script src="js/myAppModule.js"></script>
+	<style>
+		body {
+			font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+		}
+
+		div {
+			margin: 20px;
+			padding: 20px;
+			font-size: 16px;
+			color: #ffffff;
+		}
+
+		#red {
+			background-color: red;
+		}
+
+		#green {
+			background-color: green;
+		}
+
+		#blue {
+			background-color: blue;
+		}
+
+		#purple {
+			background-color: purple;
+		}
+
+		#gray {
+			background-color: gray;
+		}
+
+		#olive {
+			background-color: olive;
+		}
+	</style>
+</head>
+
+<body ng-controller="myProductDetailCtrl">
+	<h2>AngularJS Socks</h2>
+	<p>Keep warm this winter with our 100% wool, 100% cool, AngularJS socks!</p>
+	<button ng-click="showHideColors()" type="button">
+		{{isHidden ? 'Show Available Colors' : 'Hide Available Colors'}}
+	</button>
+	<div id="red" ng-hide="isHidden">Red</div>
+	<div id="green" ng-hide="isHidden">Green</div>
+	<div id="blue" ng-hide="isHidden">Blue</div>
+	<div id="purple" ng-hide="isHidden">Purple</div>
+	<div id="gray" ng-hide="isHidden">Dark Slate Gray</div>
+	<div id="olive" ng-hide="isHidden">Olive</div>
+</body>
+
+</html> -->
+
+<!-- CIUDADES -->
+<!-- <!DOCTYPE html>
+<html ng-app="myAppModule">
+
+<head>
+	<title>CIUDADES</title>
+	<script src="js/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="js/myAppModule.js"></script>
+</head>
+
+<body ng-app="myAppModule" ng-controller="repeatController">
+	<h1>Includes in Action</h1>
+	<p> You should see the inluded files contents below</p>
+	<div ng-include="'include-me.html'"></div>
+
+	<h2>My Favourite Cities</h2>
+	<div>
+		<p>I have {{cities.length}} cities</p>
+		<p>
+			<input type="text" placeholder="Select your city" ng-model="q">
+		</p>
+	</div>
+	<div ng-controller="repeatController">
+		<p ng-repeat="x in cities | filter:q as results track by x.country">
+			{{$index + 1}}. The most important city of {{x.country}} is: {{x.city}} {{$first ? '(This is the first row)':''}} {{$last
+			? '(This is the last row)':''}} {{$middle ? '(This is the middle row)':''}}
+		</p>
+		<li class="animate-repeat" ng-if="results.length === 0">
+			<strong>No results found...</strong>
+		</li>
+	</div>
+
+</body>
+
+</html> -->
+
+
+<!-- COLORES -->
+<!-- <!DOCTYPE html >
+<html ng-app="myAppModule">
+
+<head>
+	<title>COLORES</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+	<script src="js/myAppModule.js"></script>
+	<style>
+		#colorContainer div {
+			color: white;
+			text-transform: uppercase;
+			width: 200px;
+			padding: 10px;
+			margin: 5px;
+			border-radius: 5px;
+			-moz-border-radius: 5px;
+		}
+	</style>
+</head>
+
+<body ng-controller="myDemoCtrl">
+	<h2>AngularJS Socks</h2>
+	<p>Keep warm this winter with our 100% wool, 100% cool, AngularJS socks!</p>
+	<div color-list colors="colorsArray"></div>
+</body>
+
+</html> -->
+<!-- FORMULARIOS -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>FORMULARIOS</title>
+	<link rel="stylesheet" href="js/myAppModule.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="js/myAppModule.js"></script>
+</head>
+
+<body ng-app="myAppModule" ng-controller="myForm">
+	<h2>ELEMENTOS</h2>
+	<div>
+		<select name="favorite-food" id="favorite-food">
+			<option>Eggs</option>
+			<option>Fish</option>
+			<option>Bread</option>
+		</select>
+		<select name="favorite-food" id="favorite-food" multiple>
+			<option>Eggs</option>
+			<option>Fish</option>
+			<option>Bread</option>
+		</select>
+
+		<select name="favorite-food" id="favorite-food">
+			<option value="">Choose your favorite food</option>
+			<option value="eggs">I love Eggs!</option>
+			<option value="fish">Fish is my fave!</option>
+			<option value="bread">Bread rocks!</option>
+		</select>
+
+		<label for="first-name">Enter Your First Name</label>
+		<input type="text" name="first-name" id="first-name" size="20" />
+		<label for="terms">I agree to the terms and conditions</label>
+		<input type="checkbox" name="terms" id="terms" value="agree">
+	</div>
+	<hr>
+	<h2>EJEMPLO 1</h2>
+	<div>
+		<div>
+			<form name="theForm">				
+				<input type="text" name="age" placeholder="age" ng-model="person.age">
+				<input type="text" name="country" placeholder="country" ng-model="person.country">
+				<input type="text" name="placeOfBirth" placeholder="placeOfBirth" ng-model="person.placeOfBirth">
+			</form>
+			<p>
+				First Name is: {{person.firstName}}
+				<br> {{person.firstName}} have {{person.age}} years old.
+			</p>
+			<p>
+				First name is: {{person.firstName}}
+				<br/> Country name: {{person.country}}
+			</p>
+			<p>
+				First name is:
+				<span ng-bind="person.firstName"></span>
+				<br/> Place of Birth is:
+				<span ng-bind=" person.placeOfBirth "></span>
+			</p>
+		</div>
+	</div>
+	<h2>EJEMPLO 2</h2>
+	<div>
+		<form name="theForm">
+			<div>
+				<input type="text" name="firstName" ng-model="firstName">
+				<br>
+				<input type="button" value="Show first name" ng-click="showFirstName()">
+			</div>
+		</form>
+	</div>
+	<hr>
+	<h2>EJEMPLO 3</h2>
+	<div>
+		<form name="RegistrationForm" ng-submit="person.register()" novalidate>
+			<input type="text" placeholder="First Name" ng-model="person.firstName" required>
+			<span ng-show="firstNameInvalid">Please enter a value for First name</span>
+			<br>
+			<input type="text" placeholder="Last Name" ng-model="person.lastName" required>
+			<span ng-show="lastNameInvalid">Please enter a value for Last name</span>
+			<br>
+			<input type="email" placeholder="Email" ng-model="person.email" name="email" required>
+			<span ng-show="emailInvalid"><br>A valid email address is required</span>
+			<br>
+			<select name="research" ng-model="person.levels" 
+				ng-options="obj.value as obj.label for obj in person.channels" required>
+				<option value="">Where did you hear about us?</option>
+			</select>
+			<span ng-show="researchInvalid"><br/>Please tell us where you heard about us</span>
+			<br>
+			<input type="checkbox" name="newsletterOpIn" ng-model="person.newsletterOpIn"
+				id="newsletterOpIn" value="newsletterOpIn">
+			<label for="newsletterOpIn">Recieve Monthly newsletter</label>
+			<br>
+			<input type="submit" values="Register">
+		</form>
+		<div ng-show="doShow">
+			Thank you for taking the time to register
+		</div>
+	</div>
+</body>
+
+</html> -->
+
+<!-- WINDOWS SERVICES -->
+<!-- <!DOCTYPE html >
+<html ng-app="myapp">
+
+<head>
+	<title>Angular Services</title>
+	<script src="js/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script>
+		var module = angular.module('myapp', []);
+		module.controller("MyController", function ($scope, $window) {
+			$scope.winWidth = $window.innerWidth;
+		});
+	</script>
+</head>
+
+<body ng-controller="MyController">
+	<p>Window width: {{winWidth}}px</p>
+</body>
+
+</html> -->
+
+<!-- Servicio que devuelve la url donde se encuentra el archivo en el equipo -->
+<!-- <!DOCTYPE html >
+<html ng-app="myapp">
+
+<head>
+	<title>Angular Services</title>
+	<script src="js/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script>
+		var module = angular.module('myapp', []);
+		module.controller("MyController", function ($scope, $location) {
+			$scope.url = $location.absUrl();
+			$scope.protocol = $location.protocol();
+			$scope.host = $location.host();
+			$scope.port = $location.port();
+		});
+	</script>
+</head>
+
+<body ng-controller="MyController">
+	<p>The URL is: {{url}}</p>
+	<ul>
+		<li>{{protocol}}</li>
+		<li>{{host}}</li>
+		<li>{{port}}</li>
+	</ul>
+</body>
+
+</html> -->
+
+<!-- Servicio que devuelve el título del archivo -->
+<!-- <!DOCTYPE html >
+<html ng-app="myapp">
+
+<head>
+	<title>Angular Services</title>
+	<script src="js/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script>
+		var module = angular.module('myapp', []);
+		module.controller("MyController", function ($scope, $document) {
+			$scope.docTitle = $document[0].title;
+		});
+	</script>
+</head>
+
+<body ng-controller="MyController">
+	<p>The page title is: {{docTitle}}</p>
+</body>
+
+</html> -->
+
+<!--Servicio que devuelve la fecha y la hora -->
+<!-- <!DOCTYPE html >
+<html ng-app="myapp">
+
+<head>
+	<title>Angular Services</title>
+	<script src="js/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script>
+		var module = angular.module('myapp', []);
+		module.factory('dateTimeService', function () {
+			var dateTimeSvc = {};
+			dateTimeSvc.getDate = function () {
+				return new Date().toDateString();
+			}
+			dateTimeSvc.getTime = function () {
+				return new Date().toTimeString();
+			}
+			return dateTimeSvc;
+		}).controller("MyController", function ($scope, dateTimeService) {
+			$scope.theDate = dateTimeService.getDate();
+			$scope.theTime = dateTimeService.getTime();
+		});
+	</script>
+</head>
+
+<body ng-controller="MyController">
+	<p>{{theDate}}</p>
+	<p>{{theTime}}</p>
+</body>
+
+</html> -->
+
+<!-- Ejemplo completo de servicio de formulario -->
+<!-- <!DOCTYPE html>
+<html ng-app="myapp">
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Registration Form</title>
+	<script src="js/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script>
+		var module = angular.module('myapp', []);
+		module.factory('memberDataStoreService', function ($http) {
+			var memberDataStore = {};
+			memberDataStore.doRegistration = function (theData) {
+				var promise = $http({ method: 'POST', url: 'memberservices/register', data: theData });
+				return promise;
+			}
+			return memberDataStore;
+		}).controller("MyController", function ($scope, memberDataStoreService) {
+			$scope.person = {};
+			$scope.person.newsletterOptIn = true;
+			$scope.person.channels = [
+				{ value: "television", label: "Television" },
+				{ value: "radio", label: "Radio" },
+				{ value: "social-media", label: "Social Media" },
+				{ value: "other", label: "Other" }
+			];
+			$scope.register = function () {
+				$scope.firstNameInvalid = false;
+				$scope.lastNameInvalid = false;
+				$scope.emailInvalid = false;
+				$scope.researchInvalid = false;
+				$scope.showSuccessMessage = false;
+				$scope.showErrorMessage = false;
+				if (!$scope.registrationForm.firstName.$valid) {
+					$scope.firstNameInvalid = true;
+				}
+				if (!$scope.registrationForm.lastName.$valid) {
+					$scope.lastNameInvalid = true;
+				}
+				if (!$scope.registrationForm.email.$valid) {
+					$scope.emailInvalid = true;
+				}
+				if (!$scope.registrationForm.research.$valid) {
+					$scope.researchInvalid = true;
+				}
+				// If the registration form is valid, use the
+				// memberDataStoreService to submit the form data
+				if ($scope.registrationForm.$valid) {
+
+					$scope.working = true;
+					var promise = memberDataStoreService.doRegistration($scope.person);
+					promise.success(function (data, status) {
+						$scope.showSuccessMessage = true;
+					});
+					promise.error(function (data, status) {
+						$scope.showErrorMessage = true;
+					});
+
+					promise.finally(function(){
+						$scope.working = false;
+					});
+
+					$scope.doShow = true;
+				}
+			}
+		})
+	</script>
+	<style>
+		body,
+		input,
+		select {
+			font: normal 16px/1.4 Georgia;
+		}
+
+		input:not([type='checkbox']),
+		select {
+			width: 250px;
+		}
+
+		input,
+		select {
+			padding: 5px;
+			margin-top: 12px;
+		}
+
+		input[name='email'].ng-dirty.ng-invalid-email {
+			color: red;
+		}
+
+		input[name='email'].ng-dirty.ng-valid-email {
+			color: green;
+		}
+
+		form span,
+		.error {
+			color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<div ng-controller="MyController">
+			<form name="registrationForm" ng-submit="register()" novalidate>
+				<div ng-show="showSuccessMessage">
+					Thank you for taking the time to register!
+				</div>
+				<div class="error" ng-show="showErrorMessage">
+					There appears to have been a problem with your registration.
+					<br/>
+				</div>
+				<input type="text" placeholder="First Name" name="firstName" ng-model="person.firstName" required/>
+				<span ng-show="firstNameInvalid">
+					<br/>Please enter a value for First name</span>
+				<br/>
+				<input type="text" placeholder="Last Name" name="lastName" ng-model="person.lastName" required/>
+				<span ng-show="lastNameInvalid">
+					<br/>Please enter a value for Last name</span>
+				<br/>
+				<input type="email" placeholder="Email" name="email" ng-model="person.email" required/>
+				<span ng-show="emailInvalid">
+					<br/>A valid email address is required</span>
+				<br/>
+				<select name="research" ng-model="person.levels" ng-options="obj.label as obj.value for obj in person.channels" required>
+					<option value="">Where did you hear about us?</option>
+				</select>
+				<span ng-show="researchInvalid">
+					<br/>Please tell us where you heard about us</span>
+				<br/>
+				<input ng-model="person.newsletterOptIn" type="checkbox" name="newsletterOptIn" id="newsletterOptIn" value="newsletterOptIn"
+				/>
+				<label for="newsletterOptIn">Recieve monthly newsletter</label>
+				<br/>
+				<input ng-disabled="working" type="submit" value="Register" />
+				<span ng-show="working" style="padding-left: 10px;">
+					<img src="images/loading.gif">
+				</span>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html> -->
+
+
+<!-- Ejemplo mas detallado -->
+
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Ejemplo de Servicio</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/myAppModule.js"></script>
+	<link rel="stylesheet" href="js/myAppModule.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+	<div>
+		<div ng-controller="MyController">
+			<form name="registrationForm" ng-submit="register()" novalidate>
+
+				<div ng-show="showSuccessMessage">
+					Thanks you for talking the time for register
+				</div>
+
+				<div class="error" ng-show="showErrorMessage">
+					There appears to have been a problem with your registration.
+					<br/>
+				</div>
+
+				<input type="text" placeholder="First Name" name="firstName" ng-model="person.firstName" required>
+				<span ng-show="firstNameInvalid">
+					<br/>Please enter a value for First name</span>
+				<br/>
+
+				<input type="text" placeholder="Last Name" name="lastName" ng-model="person.lastName" required>
+				<span ng-show="lastNameInvalid">
+					<br>Please enter a value for Last name</span>
+				<br>
+
+				<input type="email" placeholder="Email" name="email" ng-model="person.email" required>
+				<span ng-show="emailInvalid">
+					<br/>A valid email address is required</span>
+				<br/>
+
+				<select name="research" ng-model="person.levels" ng-options="obj.label as obj.value for obj in person.channels" required>
+					<option value="">Where did you hear about us?</option>
+				</select>
+				<span ng-show="researchInvalid">
+					<br>Please tell us where you heard about us</span>
+				<br>
+
+				<input ng-model="person.newsletterOptIn" type="checkbox" name="newsletterOptIn" id="newsletterOptIn" value="newsletterOptIn">
+				<label for="newsletterOptIn" value="newsletterOptIn">Recieve monthly newsletter</label>
+				<br>
+				<input type="submit" value="Register" />
+			</form>
+		</div>
+	</div>
+
+</body>
+
+</html>
